@@ -62,18 +62,3 @@ export const isThisMonth = (date: Date): boolean => {
   return date.getFullYear() === today.getFullYear() &&
          date.getMonth() === today.getMonth();
 };
-
-
-// --- Deprecated weekly calendar functions, kept for reference if needed ---
-export const getWeekDays = (date: Date): Date[] => {
-    const startOfWeek = new Date(date);
-    const day = startOfWeek.getDay();
-    const diff = startOfWeek.getDate() - day + (day === 0 ? -6 : 1); // adjust when day is sunday
-    startOfWeek.setDate(diff);
-    
-    return Array.from({ length: 7 }, (_, i) => {
-      const day = new Date(startOfWeek);
-      day.setDate(startOfWeek.getDate() + i);
-      return day;
-    });
-};
