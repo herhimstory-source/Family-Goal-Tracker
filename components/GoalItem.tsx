@@ -111,4 +111,6 @@ const GoalItem = ({ goal, onEdit, onDelete, onToggleComplete }: GoalItemProps) =
   );
 };
 
-export default GoalItem;
+// Fix: Wrap GoalItem with React.memo to correctly type it as a React component.
+// This allows it to accept the special 'key' prop without TypeScript errors.
+export default React.memo(GoalItem);
