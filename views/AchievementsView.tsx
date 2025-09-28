@@ -55,7 +55,9 @@ const AchievementsView = ({ goals, onEdit, onDelete, onToggleComplete }: Achieve
                     </div>
                 ) : (
                     <div className="space-y-6">
-                        {Object.entries(goalsByCategory).map(([categoryName, categoryGoals]) => {
+                        {/* Fix: Replaced Object.entries with Object.keys to ensure proper type inference for categoryGoals. */}
+                        {Object.keys(goalsByCategory).map((categoryName) => {
+                            const categoryGoals = goalsByCategory[categoryName];
                             if (categoryGoals.length === 0) return null;
                             const category = getCategory(categoryName);
                             return (

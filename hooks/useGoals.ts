@@ -1,8 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import * as api from '../services/googleAppsScript.ts';
+// Fix: Import Goal type to strongly type the state.
+import { Goal } from '../types.ts';
 
 export const useGoals = () => {
-  const [goals, setGoals] = useState([]);
+  // Fix: Explicitly type the state to ensure goals are always Goal[].
+  const [goals, setGoals] = useState<Goal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -49,7 +52,7 @@ export const useGoals = () => {
     }
   };
   
-  const toggleComplete = async (goal) => {
+  const toggleComplete = async (goal: Goal) => {
     const updatedStatus = goal.status === 'completed' ? 'pending' : 'completed';
     const completedAt = updatedStatus === 'completed' ? new Date().toISOString() : undefined;
     
