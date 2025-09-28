@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { USERS } from '../constants.js';
-import ThemeToggle from './ThemeToggle.jsx';
+import { USERS } from '../constants.ts';
+import ThemeToggle from './ThemeToggle.tsx';
 
 const Header = ({ selectedUser, onSelectUser }) => {
   const [isOpen, setIsOpen] = useState(false);

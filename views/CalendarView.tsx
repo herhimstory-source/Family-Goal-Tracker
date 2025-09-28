@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import GoalList from '../components/GoalList.jsx';
-import { formatToYYYYMMDD } from '../utils/dateUtils.js';
+import GoalList from '../components/GoalList.tsx';
+import { formatToYYYYMMDD } from '../utils/dateUtils.ts';
 
 const CalendarView = ({ goals, onEdit, onDelete, onToggleComplete }) => {
   const [currentDate, setCurrentDate] = useState(new Date());

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import * as api from '../services/googleAppsScript.js';
+import * as api from '../services/googleAppsScript.ts';
 
 export const useGoals = () => {
   const [goals, setGoals] = useState([]);

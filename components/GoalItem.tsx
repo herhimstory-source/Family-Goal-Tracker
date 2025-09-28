@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
-import { getCategory, getUser } from '../constants.js';
-import { formatFullDateWithDay } from '../utils/dateUtils.js';
+import { getCategory, getUser } from '../constants.ts';
+import { formatFullDateWithDay } from '../utils/dateUtils.ts';
+// Fix: Import the Goal type for explicit prop typing.
+import { Goal } from '../types.ts';
 
-const GoalItem = ({ goal, onEdit, onDelete, onToggleComplete }) => {
+// Fix: Added explicit prop types to ensure type safety.
+interface GoalItemProps {
+  goal: Goal;
+  onEdit: (goal: Goal) => void;
+  onDelete: (id: string) => void;
+  onToggleComplete: (goal: Goal) => void;
+}
+
+const GoalItem = ({ goal, onEdit, onDelete, onToggleComplete }: GoalItemProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const category = getCategory(goal.category);

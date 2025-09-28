@@ -1,16 +1,23 @@
 import React, { useMemo } from 'react';
-import Dashboard from '../components/Dashboard.jsx';
-import { CATEGORIES, getCategory } from '../constants.js';
-import GoalItem from '../components/GoalItem.jsx';
-// Fix: Import the Goal type for explicit typing.
-import { Goal } from '../types.js';
+import Dashboard from '../components/Dashboard.tsx';
+import { CATEGORIES, getCategory } from '../constants.ts';
+import GoalItem from '../components/GoalItem.tsx';
+import { Goal } from '../types.ts';
 
-const AchievementsView = ({ goals, onEdit, onDelete, onToggleComplete }) => {
+// Fix: Added explicit prop types to ensure type safety and correct type inference within the component.
+interface AchievementsViewProps {
+  goals: Goal[];
+  onEdit: (goal: Goal) => void;
+  onDelete: (id: string) => void;
+  onToggleComplete: (goal: Goal) => void;
+}
+
+const AchievementsView = ({ goals, onEdit, onDelete, onToggleComplete }: AchievementsViewProps) => {
     
     const pendingGoals = useMemo(() => goals.filter(g => g.status === 'pending'), [goals]);
     
     const goalsByCategory = useMemo(() => {
-        // Fix: Explicitly type `grouped` to ensure `categoryGoals` is correctly inferred as an array of Goals.
+        // Explicitly typing `grouped` ensures `categoryGoals` is correctly inferred as an array of Goals.
         const grouped: { [key: string]: Goal[] } = {};
         
         // Initialize with all categories to maintain order

@@ -1,7 +1,18 @@
 import React from 'react';
-import GoalItem from './GoalItem.jsx';
+import GoalItem from './GoalItem.tsx';
+// Fix: Import the Goal type for explicit prop typing.
+import { Goal } from '../types.ts';
 
-const GoalList = ({ goals, onEdit, onDelete, onToggleComplete, listTitle }) => {
+// Fix: Added explicit prop types to ensure type safety.
+interface GoalListProps {
+  goals: Goal[];
+  onEdit: (goal: Goal) => void;
+  onDelete: (id: string) => void;
+  onToggleComplete: (goal: Goal) => void;
+  listTitle: string;
+}
+
+const GoalList = ({ goals, onEdit, onDelete, onToggleComplete, listTitle }: GoalListProps) => {
   if (goals.length === 0) {
     return (
       <div className="text-center py-10">

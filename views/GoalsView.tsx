@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import GoalList from '../components/GoalList.jsx';
-import { isToday, isThisWeek, isThisMonth, isCompletedToday } from '../utils/dateUtils.js';
+import GoalList from '../components/GoalList.tsx';
+import { isToday, isThisWeek, isThisMonth, isCompletedToday } from '../utils/dateUtils.ts';
 
 const FILTERS = [
   { key: 'today', label: '오늘 목표' },

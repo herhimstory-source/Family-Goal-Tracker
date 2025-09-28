@@ -1,10 +1,17 @@
 import React from 'react';
-import StatsCard from './StatsCard.jsx';
-import CompletionChart from './CompletionChart.jsx';
-import CategoryChart from './CategoryChart.jsx';
-import { getCategory } from '../constants.js';
+import StatsCard from './StatsCard.tsx';
+import CompletionChart from './CompletionChart.tsx';
+import CategoryChart from './CategoryChart.tsx';
+import { getCategory } from '../constants.ts';
+// Fix: Import the Goal type for explicit prop typing.
+import { Goal } from '../types.ts';
 
-const Dashboard = ({ goals }) => {
+// Fix: Added explicit prop types to ensure type safety.
+interface DashboardProps {
+  goals: Goal[];
+}
+
+const Dashboard = ({ goals }: DashboardProps) => {
   const pendingGoals = goals.filter(g => g.status === 'pending');
   const completedGoals = goals.filter(g => g.status === 'completed');
 

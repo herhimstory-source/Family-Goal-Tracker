@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListIcon, CalendarIcon, TrophyIcon } from './icons.jsx';
+import { ListIcon, CalendarIcon, TrophyIcon } from './icons.tsx';
 
 const Navigation = ({ currentView, onNavigate }) => {
   const navItems = [

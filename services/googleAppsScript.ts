@@ -1,4 +1,4 @@
-import { SCRIPT_URL } from '../constants.js';
+import { SCRIPT_URL } from '../constants.ts';
 
 const performRequest = async (action, payload) => {
   const url = `${SCRIPT_URL}?action=${action}`;

@@ -1,4 +1,4 @@
-import { Goal } from '../types.js';
+import { Goal } from '../types.ts';
 
 export const formatToYYYYMMDD = (date) => {
     return date.toISOString().split('T')[0];

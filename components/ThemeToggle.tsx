@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SunIcon, MoonIcon } from './icons.jsx';
+import { SunIcon, MoonIcon } from './icons.tsx';
 
 const ThemeToggle = () => {
   // The anti-FOUC script in index.html sets the correct initial class, so we read from it.

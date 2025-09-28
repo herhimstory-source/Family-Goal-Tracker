@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { DailyCompletionData } from '../types.js';
+import { DailyCompletionData } from '../types.ts';
 
 const CompletionChart = ({ data }) => {
     if(!data || data.length === 0) {

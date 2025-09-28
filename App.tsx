@@ -1,13 +1,13 @@
 import React, { useState, useMemo } from 'react';
-import { useGoals } from './hooks/useGoals.js';
-import { USERS } from './constants.js';
-import Header from './components/Header.jsx';
-import GoalModal from './components/GoalModal.jsx';
-import Loader from './components/Loader.jsx';
-import Navigation from './components/Navigation.jsx';
-import GoalsView from './views/GoalsView.jsx';
-import CalendarView from './views/CalendarView.jsx';
-import AchievementsView from './views/AchievementsView.jsx';
+import { useGoals } from './hooks/useGoals.ts';
+import { USERS } from './constants.ts';
+import Header from './components/Header.tsx';
+import GoalModal from './components/GoalModal.tsx';
+import Loader from './components/Loader.tsx';
+import Navigation from './components/Navigation.tsx';
+import GoalsView from './views/GoalsView.tsx';
+import CalendarView from './views/CalendarView.tsx';
+import AchievementsView from './views/AchievementsView.tsx';
 
 const App = () => {
   const {

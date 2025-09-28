@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { CategoryStatsData } from '../types.js';
+import { CategoryStatsData } from '../types.ts';
 
 const CategoryChart = ({ data }) => {
   if (!data || data.length === 0) {
