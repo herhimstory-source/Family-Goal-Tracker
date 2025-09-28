@@ -1,0 +1,5 @@
+{
+  "name": "Family Goals Tracker",
+  "description": "A collaborative web application for families to set, track, and complete shared goals. The app is powered by a Google Sheet backend and provides a motivational dashboard with statistics and progress charts.",
+  "requestFramePermissions": []
+}
