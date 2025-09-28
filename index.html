@@ -94,11 +94,12 @@
   }
 }
 </script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
   <body class="bg-base-100 text-base-content">
     <div class="absolute top-0 z-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(128,128,128,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(128,128,128,0.07)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root" class="relative z-10"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
